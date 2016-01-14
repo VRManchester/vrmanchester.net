@@ -1,9 +1,0 @@
-{
-  "name": "vrmanchester",
-  "private": true,
-  "dependencies": {
-  },
-  "devDependencies": {
-    "minifyHTML":"https://github.com/penibelst/jekyll-compress-html/releases/download/v2.1.0/compress.html.zip"
-  }
-}
