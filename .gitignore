@@ -1,0 +1,13 @@
+.sass-cache
+.DS_Store
+.bundle
+_site
+_bower_components/
+node_modules/
+.publish/
+.temp/
+
+app/assets/javascripts/
+app/assets/stylesheets/
+app/assets/js
+app/assets/css

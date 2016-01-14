@@ -1,0 +1,28 @@
+{
+  "name": "vrmanchester.net",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Scott Vernon",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.7.2",
+    "browser-sync": "^2.11.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "run-sequence": "^1.1.5"
+  },
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "start": "npm run gulp",
+    "deploy": "npm run gulp -- deploy",
+    "bower_install": "./node_modules/bower/bin/bower install",
+    "postinstall": "bundle install && npm run bower_install"
+  }
+}
