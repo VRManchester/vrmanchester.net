@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "author": "Scott Vernon",
-  "dependencies": {},
+  "dependencies": {
+    "three": "^0.74.0"
+  },
   "devDependencies": {
     "bower": "^1.7.2",
     "browser-sync": "^2.11.0",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cssnano": "^2.1.0",
@@ -16,7 +19,11 @@
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
-    "run-sequence": "^1.1.5"
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
   },
   "scripts": {
     "gulp": "./node_modules/gulp/bin/gulp.js",

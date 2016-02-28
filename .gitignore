@@ -11,3 +11,5 @@ app/assets/javascripts/
 app/assets/stylesheets/
 app/assets/js
 app/assets/css
+
+npm-debug.log

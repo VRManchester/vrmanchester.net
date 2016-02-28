@@ -8,6 +8,10 @@ plugins.browserSync = require('browser-sync');
 var postcss = require('postcss');
 var autoprefixer = require('gulp-autoprefixer')
 
+var source = require('vinyl-source-stream');
+var transform = require('vinyl-transform');
+var browserify = require('browserify');
+var buffer = require('vinyl-buffer');
 var runSequence = require('run-sequence');
 
 /**
@@ -125,6 +129,65 @@ gulp.task('sass:production', function() {
 });
 
 
+
+
+
+
+
+// JAVASCRIPT
+//
+
+
+
+
+gulp.task('js:development', function() {
+  var b = browserify({
+    entries: './app/assets/_js/main.js',
+    debug: true
+  });
+
+  return b.bundle()
+  // Source is the *name* of the outputted file from browserify
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(plugins.sourcemaps.init({loadMaps: true}))
+      .on('error', plugins.util.log)
+    .pipe(plugins.sourcemaps.write('./'))
+    .pipe(gulp.dest('.temp/development/assets/js/'));
+});
+
+
+gulp.task('js:production', function() {
+  var b = browserify({
+    entries: './app/assets/_js/main.js',
+    debug: true
+  });
+
+  return b.bundle()
+  // Source is the *name* of the outputted file from browserify
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+  // Output to both _site and temp for crticial path
+    // .pipe(gulp.dest('_site/assets/js/'))
+    .pipe(gulp.dest('.temp/production/assets/js/'));
+});
+
+
+// assets:dev
+// assets:production
+
+gulp.task('assets:dev', ['sass:development', 'js:development']);
+gulp.task('assets:production', ['sass:production', 'js:production']);
+
+
+
+
+
+
+
+
+
 /**
  * Browser Sync
  */
@@ -149,7 +212,7 @@ gulp.task('browser-sync', ['sass:development', 'jekyll:dev'], function() {
  */
 
 // add js to watch when necessary
- gulp.task('watch', ['sass:development'], function() {
+ gulp.task('watch', ['sass:development', 'js:development'], function() {
 
    gulp.watch('app/assets/_scss/**/*.scss', ['sass:development']);
    gulp.watch('app/assets/_js/**/*.js', ['js:development']);
