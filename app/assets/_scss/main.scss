@@ -8,13 +8,18 @@ body {
   // background-position: top center;
 }
 
+.logo {
+  display: block;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
 .container {
   margin: 32px auto 0;
   max-width: 800px;
   padding: 0 16px;
-  background-image: url('/images/vrmanchester_logo.jpeg');
-  background-repeat: no-repeat;
-  padding-top: 600px;
+  // background-image: url('/images/vrmanchester_logo.jpeg');
+  // background-repeat: no-repeat;
 }
 
 h1 {
