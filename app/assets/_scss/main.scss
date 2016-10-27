@@ -2,15 +2,19 @@
 
 body {
   font-family: Helvetica;
+  background-color: #fdd04f;
   // background: #444;
   // background-image: url('/images/bg.jpg');
   // background-position: top center;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 720px;
+  margin: 32px auto 0;
+  max-width: 800px;
   padding: 0 16px;
+  background-image: url('/images/vrmanchester_logo.jpeg');
+  background-repeat: no-repeat;
+  padding-top: 600px;
 }
 
 h1 {
